@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Sea Eats</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="style.css"> <!-- Main CSS for desktop -->
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/sea_eats_logo.svg" alt="Sea Eats Logo">
+            </a>
+        </div>
+        <!-- Navigation Menu -->
+        <nav>
+            <div class="menu-toggle">&#9776;</div> <!-- Hamburger Menu Icon -->
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="page-content">
+        <section class="contact">
+            <h1>Contact Us</h1>
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <p><strong>Address:</strong> 412 Neighborhood Road, Mastic Beach, NY 11951</p>
+                <p><strong>Phone:</strong> (123) 456-7890</p>
+                <p><strong>Email:</strong> info@seaeats.com</p>
+                <p><strong>Business Hours:</strong></p>
+                <ul>
+                    <li>Monday - Friday: 11:00 AM - 10:00 PM</li>
+                    <li>Saturday - Sunday: 10:00 AM - 11:00 PM</li>
+                </ul>
+            </div>
+            <!-- Contact Container (Map and Form) -->
+            <div class="contact-container">
+                <!-- Google Map -->
+                <div class="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d599.1236719351924!2d-72.85911561143581!3d40.761821545469004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e8505bf460b1e3%3A0x183837d92deeca70!2s412%20Neighborhood%20Rd%2C%20Mastic%20Beach%2C%20NY%2011951!5e0!3m2!1sen!2sus!4v1742112292882!5m2!1sen!2sus"
+                        width="100%"
+                        height="400"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Hamburger Menu Script -->
+    <script src="scripts/hamburger-script.js"></script>
+
+    <!-- Dynamic Footer Loader -->
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.body.insertAdjacentHTML('beforeend', data))
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sea Eats</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="style.css"> <!-- Main CSS for desktop -->
+</head>
+<body class="home-page">
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/sea_eats_logo.svg" alt="Sea Eats Logo">
+            </a>
+        </div>
+        <!-- Navigation Menu -->
+        <nav>
+            <div class="menu-toggle">&#9776;</div> <!-- Hamburger Menu Icon -->
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="page-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="video-wrapper">
+                <video id="hero-video" autoplay muted loop>
+                    <source src="https://github.com/sdemetriusjenkins/CSC47300HW1/raw/refs/heads/main/videos/restaurant_banner_vid.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <!-- Hero Content -->
+            <div class="hero-content">
+                <div class="welcome-message">
+                    <span>Welcome To</span>
+                    <img src="images/sea_eats_logo_alt.svg" alt="Sea Eats Logo">
+                </div>
+                <a href="menu.html" class="btn">Explore Our Menu</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Home Page Script -->
+    <script src="scripts/home-script.js"></script>
+
+    <!-- Dynamic Footer Loader -->
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.body.insertAdjacentHTML('beforeend', data))
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+</body>
+</html>
