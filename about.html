@@ -21,13 +21,14 @@
         </div>
         <!-- Navigation Menu -->
         <nav>
-            <div class="menu-toggle">&#9776;</div> <!-- Hamburger Menu Icon -->
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <!-- Cart sidebar will be loaded here -->
             </ul>
+            <div class="menu-toggle">&#9776;</div>
         </nav>
     </header>
 
@@ -38,7 +39,7 @@
             <div class="about-content">
                 <h1>Our Story</h1>
                 <p>
-                    Welcome to <strong>Sea Eats</strong>, where the ocean meets your plate. Our journey began in 2010, when our founder, <strong>Chef Sean Jenkins</strong>, a lifelong seafood enthusiast, decided to bring the flavors of the sea to the heart of the city. Growing up in a small coastal town, Marco developed a deep appreciation for fresh, sustainably sourced seafood. His dream was to create a restaurant that not only served delicious dishes but also celebrated the beauty and bounty of the ocean.
+                    Welcome to <strong>Sea Eats</strong>, where the ocean meets your plate. Our journey began in 2010, when our founder, <strong>Sean Jenkins</strong>, a lifelong seafood enthusiast, decided to bring the flavors of the sea to the heart of the city. Growing up in a small coastal town, Marco developed a deep appreciation for fresh, sustainably sourced seafood. His dream was to create a restaurant that not only served delicious dishes but also celebrated the beauty and bounty of the ocean.
                 </p>
                 <p>
                     At Sea Eats, we believe in the power of simplicity. Our menu is a tribute to the freshest ingredients, prepared with care and respect for tradition. From our signature <strong>Grilled Lobster Tail</strong> to the rich and comforting <strong>New England Clam Chowder</strong>, every dish tells a story of passion and dedication.
@@ -60,12 +61,29 @@
     <!-- Hamburger Menu Script -->
     <script src="scripts/hamburger-script.js"></script>
 
+    <script src="scripts/cart.js"></script>
+
     <!-- Dynamic Footer Loader -->
     <script>
         fetch('footer.html')
             .then(response => response.text())
             .then(data => document.body.insertAdjacentHTML('beforeend', data))
             .catch(error => console.error('Error loading footer:', error));
+    </script>
+
+    <script>
+        // Load cart sidebar
+        fetch('cart-sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                const navUl = document.querySelector('nav ul');
+                navUl.insertAdjacentHTML('beforeend', data);
+                // Initialize cart after loading
+                if (typeof ShoppingCart !== 'undefined') {
+                    window.cart = new ShoppingCart();
+                }
+            })
+            .catch(error => console.error('Error loading cart sidebar:', error));
     </script>
 </body>
 </html>

@@ -19,15 +19,15 @@
                 <img src="images/sea_eats_logo.svg" alt="Sea Eats Logo">
             </a>
         </div>
-        <!-- Navigation Menu -->
         <nav>
-            <div class="menu-toggle">&#9776;</div> <!-- Hamburger Menu Icon -->
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <!-- Cart sidebar will be loaded here -->
             </ul>
+            <div class="menu-toggle">&#9776;</div>
         </nav>
     </header>
 
@@ -86,12 +86,29 @@
     <!-- Hamburger Menu Script -->
     <script src="scripts/hamburger-script.js"></script>
 
+    <script src="scripts/cart.js"></script>
+
     <!-- Dynamic Footer Loader -->
     <script>
         fetch('footer.html')
             .then(response => response.text())
             .then(data => document.body.insertAdjacentHTML('beforeend', data))
             .catch(error => console.error('Error loading footer:', error));
+    </script>
+
+    <script>
+        // Load cart sidebar
+        fetch('cart-sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                const navUl = document.querySelector('nav ul');
+                navUl.insertAdjacentHTML('beforeend', data);
+                // Initialize cart after loading
+                if (typeof ShoppingCart !== 'undefined') {
+                    window.cart = new ShoppingCart();
+                }
+            })
+            .catch(error => console.error('Error loading cart sidebar:', error));
     </script>
 </body>
 </html>
