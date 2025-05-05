@@ -1,6 +1,6 @@
 {
   "homepage": "http://sdemetriusjenkins.github.io/CSC47300_HW",
-  "name": "frontend",
+  "name": "csc47300_hw",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
