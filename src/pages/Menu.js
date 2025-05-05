@@ -225,7 +225,10 @@ const Menu = () => {
                 >
                     {menuItems.map(item => (
                         <SwiperSlide key={item.id}>
-                            <img src={`/images/${item.image}`} alt={item.name} />
+                            <img 
+                                src={`${process.env.PUBLIC_URL}/images/${item.image}`} 
+                                alt={item.name} 
+                            />
                         </SwiperSlide>
                     ))}
                     <div className="swiper-pagination"></div>

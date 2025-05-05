@@ -19,7 +19,7 @@ const Home = () => {
                             loop
                         >
                             <source 
-                                src="/videos/restaurant_banner_vid.mp4" 
+                                src={`${process.env.PUBLIC_URL}/videos/restaurant_banner_vid.mp4`} 
                                 type="video/mp4" 
                             />
                             Your browser does not support the video tag.
@@ -28,7 +28,10 @@ const Home = () => {
                     <div className="hero-content">
                         <div className="welcome-message">
                             <span>Welcome To</span>
-                            <img src="/images/sea_eats_logo_alt.svg" alt="Sea Eats Logo" />
+                            <img 
+                                src={`${process.env.PUBLIC_URL}/images/sea_eats_logo_alt.svg`} 
+                                alt="Sea Eats Logo" 
+                            />
                         </div>
                         <Link to="/menu" className="btn">Explore Our Menu</Link>
                     </div>

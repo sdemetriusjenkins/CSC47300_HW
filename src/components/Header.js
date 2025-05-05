@@ -10,7 +10,7 @@ const Header = () => {
         <header>
             <div className="logo">
                 <Link to="/">
-                    <img src="/images/sea_eats_logo.svg" alt="Sea Eats Logo" />
+                    <img src={`${process.env.PUBLIC_URL}/images/sea_eats_logo.svg`} alt="Sea Eats Logo" />
                 </Link>
             </div>
             <nav>

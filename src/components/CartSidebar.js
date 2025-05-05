@@ -108,7 +108,10 @@ const CartSidebar = () => {
                 </div>
                 {cartItems.length === 0 ? (
                     <div className="cart-empty">
-                        <img src="/images/shopping-cart-empty.svg" alt="Empty Cart" />
+                        <img 
+                            src={`${process.env.PUBLIC_URL}/images/shopping-cart-empty.svg`} 
+                            alt="Empty Cart" 
+                        />
                         <p>Your cart is currently empty</p>
                         <Link 
                             to="/menu" 
@@ -124,7 +127,7 @@ const CartSidebar = () => {
                             {cartItems.map(item => (
                                 <div key={item.id} className="cart-item">
                                     <div className="cart-item-image">
-                                        <img src={`/images/${item.image}`} alt={item.name} />
+                                        <img src={`${process.env.PUBLIC_URL}/images/${item.image}`} alt={item.name} />
                                     </div>
                                     <div className="cart-item-info">
                                         <div className="cart-item-title">{item.name}</div>

@@ -20,7 +20,7 @@ const About = () => {
                     </p>
                 </div>
                 <div className="about-image">
-                    <img src="/images/about.png" alt="Sea Eats Restaurant" />
+                    <img src={`${process.env.PUBLIC_URL}/images/about.png`} alt="Sea Eats Restaurant" />
                 </div>
             </section>
         </div>
