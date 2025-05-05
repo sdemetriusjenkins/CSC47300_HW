@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Mrs+Saint+Delafield&display=swap');
+
 /* Reset default styles */
 body, h1, p, ul {
     margin: 0;
@@ -11,7 +13,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 40px;
-    background-image: url('images/header-background.svg');
+    background-image: url('../public/images/header-background.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -171,14 +173,15 @@ header .menu-toggle {
     margin-bottom: 0;
 }
 
+/* Swiper Container and Pagination Styles */
 .swiper-container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
-    padding-bottom: 50px;
-    overflow: hidden;
-    z-index: 1; /* Lower z-index */
+    overflow: hidden; 
+    padding-bottom: 0;
+    z-index: 1;
 }
 
 .swiper-slide img {
@@ -203,7 +206,7 @@ header .menu-toggle {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 2; /* Lower z-index */
+    z-index: 2; 
 }
 
 .swiper-button-next:hover,
@@ -227,20 +230,25 @@ header .menu-toggle {
 }
 
 .swiper-pagination {
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2; /* Lower z-index */
+    position: relative !important;
+    bottom: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin: 20px 0 15px 0; 
+    width: auto !important;
 }
 
 .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
     background: #5309f4;
     opacity: 0.5;
+    margin: 0 5px !important;
 }
 
 .swiper-pagination-bullet-active {
     opacity: 1;
+    background: #5309f4;
 }
 
 /* Menu Section */
@@ -559,7 +567,7 @@ button[type="submit"]:hover {
 .cart-icon {
     width: 38px;
     height: 38px;
-    background-image: url('images/shopping-cart-still.svg');
+    background-image: url('../public/images/shopping-cart-still.svg');
     background-size: contain;
     background-repeat: no-repeat;
     transition: background-image 0.3s ease;
@@ -568,7 +576,7 @@ button[type="submit"]:hover {
 .cart-button:hover .cart-icon {
     width: 42px;
     height: 42px;
-    background-image: url('images/shopping-cart-clicked.svg');
+    background-image: url('../public/images/shopping-cart-clicked.svg');
     background-size: contain;
     background-repeat: no-repeat;
     transition: background-image 0.3s ease;
@@ -589,7 +597,7 @@ button[type="submit"]:hover {
 .cart-panel {
     position: fixed;
     top: 0;
-    right: -100%; /* Change from -400px to -100% */
+    right: -100%;
     width: 400px;
     height: 100vh;
     background: white;
@@ -605,12 +613,12 @@ button[type="submit"]:hover {
 }
 
 .cart-items {
-    max-height: calc(100vh - 300px); /* Adjust height to leave space for header and totals */
+    max-height: calc(100vh - 300px);
     overflow-y: auto;
-    margin: 0 -20px; /* Negative margin to extend to edges */
-    padding: 0 20px; /* Add padding back to content */
-    scrollbar-width: thin; /* Firefox */
-    scrollbar-color: #7d47e9 #f0f0f0; /* Firefox: thumb and track colors */
+    margin: 0 -20px; 
+    padding: 0 20px;
+    scrollbar-width: thin;
+    scrollbar-color: #7d47e9 #f0f0f0; 
 }
 
 .cart-items::-webkit-scrollbar {
@@ -1082,7 +1090,7 @@ quantity-btn:hover {
 /* Mobile-specific styles (applies to screens 768px or less) */
 @media only screen and (max-width: 768px) {
     .home-page {
-        background: linear-gradient(to bottom, black 50%, white 50%); /* Gradient background for home page */
+        background: linear-gradient(to bottom, black 50%, white 50%);
     }
 
     /* Header Styles */
@@ -1092,7 +1100,7 @@ quantity-btn:hover {
         align-items: center;
         height: 80px;
         padding: 0 10px;
-        background-color: #333; /* Dark background for header */
+        background-color: #333;
         color: white;
         position: relative;
     }
@@ -1123,14 +1131,14 @@ quantity-btn:hover {
 
     header nav ul li {
         text-align: left;
-        padding-left: 20px; /* Padding for menu items */
+        padding-left: 20px;
     }
 
     header nav ul li a {
         color: white;
         text-decoration: none;
         font-size: 16px;
-        transition: color 0.3s ease; /* Smooth hover effect */
+        transition: color 0.3s ease;
     }
 
     /* Hamburger Menu Icon */
@@ -1144,7 +1152,7 @@ quantity-btn:hover {
 
     /* Page Content */
     .page-content {
-        transition: margin-top 0.3s ease; /* Smooth transition for content movement */
+        transition: margin-top 0.3s ease;
     }
 
     /* Hero Section */
@@ -1177,7 +1185,7 @@ quantity-btn:hover {
 
     /* Menu Grid */
     .menu-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid layout */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 
     /* About Section */
@@ -1286,12 +1294,12 @@ quantity-btn:hover {
         white-space: nowrap;
         color: white;
         text-decoration: none;
-        transition: color 0.3s; /* Smooth hover effect */
+        transition: color 0.3s;
     }
 
     .footer-links ul li a:hover,
     .footer-social ul li a:hover {
-        color: #3200e9; /* Hover color */
+        color: #3200e9; 
     }
 
     /* Footer Copyright */
@@ -1318,8 +1326,8 @@ quantity-btn:hover {
         width: 100%;
         height: 100vh;
         padding: 20px;
-        box-sizing: border-box; /* Add this to include padding in width calculation */
-        transform: none; /* Remove transform */
+        box-sizing: border-box;
+        transform: none;
     }
 
     .cart-panel.active {
@@ -1406,7 +1414,7 @@ quantity-btn:hover {
     }
 
     .cart-notification {
-        position: static; /* Change from 'relative' to 'static' */
+        position: static;
         width: 90%;
         max-width: 320px;
         margin: 0 auto;
@@ -1446,20 +1454,20 @@ quantity-btn:hover {
     /* Mobile Cart Icon Styles */
     .cart-icon {
         margin-top: -8px;
-        width: 35px;  /* Reduced from 38px */
-        height: 35px; /* Reduced from 38px */
+        width: 35px; 
+        height: 35px;
     }
 
     .cart-button:hover .cart-icon {
-        width: 39px;  /* Reduced from 42px */
-        height: 39px; /* Reduced from 42px */
+        width: 39px; 
+        height: 39px;
     }
 
     .cart-count {
         margin-top: -8px;
-        font-size: 14px;    /* Reduced from 16px */
-        padding: 1px 5px;   /* Reduced from 2px 6px */
-        top: -3px;          /* Adjusted from -5px */
-        right: -3px;        /* Adjusted from -5px */
+        font-size: 14px;   
+        padding: 1px 5px;  
+        top: -3px;  
+        right: -3px;
     }
 }
