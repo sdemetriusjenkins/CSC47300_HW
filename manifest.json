@@ -1,6 +1,6 @@
 {
-  "short_name": "Sea Eats",
-  "name": "Sea Eats Restaurant",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [],
   "start_url": ".",
   "display": "standalone",
